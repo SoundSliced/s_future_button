@@ -1,5 +1,5 @@
-name: future_button_example
-description: A Flutter example application for the future_button package.
+name: s_future_button_example
+description: A Flutter example application for the s_future_button package.
 
 publish_to: 'none'
 
@@ -12,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  future_button:
+  s_future_button:
     path: ../
 
 dev_dependencies:

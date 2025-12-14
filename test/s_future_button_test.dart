@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:future_button/future_button.dart';
+import 'package:s_future_button/s_future_button.dart';
 
 void main() {
-  group('FutureButton Widget Tests', () {
-    testWidgets('FutureButton renders with default label',
+  group('SFutureButton Widget Tests', () {
+    testWidgets('SFutureButton renders with default label',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Test Button',
             ),
@@ -19,14 +19,14 @@ void main() {
       );
 
       expect(find.text('Test Button'), findsOneWidget);
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton renders with icon', (WidgetTester tester) async {
+    testWidgets('SFutureButton renders with icon', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               icon: const Icon(Icons.check),
             ),
@@ -37,12 +37,12 @@ void main() {
       expect(find.byIcon(Icons.check), findsOneWidget);
     });
 
-    testWidgets('FutureButton respects isEnabled parameter',
+    testWidgets('SFutureButton respects isEnabled parameter',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Disabled Button',
               isEnabled: false,
@@ -53,15 +53,15 @@ void main() {
 
       expect(find.text('Disabled Button'), findsOneWidget);
       // Disabled state is handled by SDisabled wrapper
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton respects custom dimensions',
+    testWidgets('SFutureButton respects custom dimensions',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Custom Size',
               width: 200,
@@ -71,18 +71,18 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
       expect(find.text('Custom Size'), findsOneWidget);
     });
 
-    testWidgets('FutureButton respects bgColor parameter',
+    testWidgets('SFutureButton respects bgColor parameter',
         (WidgetTester tester) async {
       const Color customColor = Colors.red;
 
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Custom Color',
               bgColor: customColor,
@@ -91,15 +91,15 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton respects borderRadius parameter',
+    testWidgets('SFutureButton respects borderRadius parameter',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Rounded Button',
               borderRadius: 12,
@@ -108,15 +108,15 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton respects isElevatedButton parameter',
+    testWidgets('SFutureButton respects isElevatedButton parameter',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Flat Button',
               isElevatedButton: false,
@@ -125,16 +125,16 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
     testWidgets(
-        'FutureButton shows error message when showErrorMessage is true',
+        'SFutureButton shows error message when showErrorMessage is true',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => false,
               label: 'Validate',
               showErrorMessage: true,
@@ -143,16 +143,16 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
     testWidgets(
-        'FutureButton hides error message when showErrorMessage is false',
+        'SFutureButton hides error message when showErrorMessage is false',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => false,
               label: 'Validate',
               showErrorMessage: false,
@@ -161,15 +161,15 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton calls onPostSuccess callback on success',
+    testWidgets('SFutureButton calls onPostSuccess callback on success',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Success',
               onPostSuccess: () {},
@@ -181,15 +181,15 @@ void main() {
       await tester.tap(find.byType(ElevatedButton));
       await tester.pump();
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton configures onPostError callback',
+    testWidgets('SFutureButton configures onPostError callback',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => false,
               label: 'Error',
               onPostError: (error) {},
@@ -199,19 +199,19 @@ void main() {
       );
 
       // Verify the button renders correctly
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
       expect(find.byType(ElevatedButton), findsOneWidget);
       expect(find.text('Error'), findsOneWidget);
     });
 
-    testWidgets('FutureButton configures exception handling callback',
+    testWidgets('SFutureButton configures exception handling callback',
         (WidgetTester tester) async {
       final Exception testException = Exception('Test error');
 
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async {
                 throw testException;
               },
@@ -225,19 +225,19 @@ void main() {
       );
 
       // Verify the button renders correctly
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
       expect(find.byType(ElevatedButton), findsOneWidget);
       expect(find.text('Exception'), findsOneWidget);
     });
 
-    testWidgets('FutureButton handles null return (silent dismissal)',
+    testWidgets('SFutureButton handles null return (silent dismissal)',
         (WidgetTester tester) async {
       bool successCalled = false;
 
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => null,
               label: 'Silent',
               onPostSuccess: () {
@@ -258,12 +258,12 @@ void main() {
       expect(successCalled, false);
     });
 
-    testWidgets('FutureButton respects loadingCircleSize parameter',
+    testWidgets('SFutureButton respects loadingCircleSize parameter',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async {
                 return true;
               },
@@ -274,17 +274,17 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton respects focusNode parameter',
+    testWidgets('SFutureButton respects focusNode parameter',
         (WidgetTester tester) async {
       final FocusNode focusNode = FocusNode();
 
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Focusable',
               focusNode: focusNode,
@@ -293,19 +293,19 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
 
       addTearDown(focusNode.dispose);
     });
 
-    testWidgets('FutureButton respects onFocusChange callback',
+    testWidgets('SFutureButton respects onFocusChange callback',
         (WidgetTester tester) async {
       bool focusCalled = false;
 
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Focus Test',
               onFocusChange: (isFocused) {
@@ -325,14 +325,14 @@ void main() {
       expect(focusCalled, true);
     });
 
-    testWidgets('FutureButton respects iconColor parameter',
+    testWidgets('SFutureButton respects iconColor parameter',
         (WidgetTester tester) async {
       const Color customIconColor = Colors.yellow;
 
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: () async => true,
               label: 'Icon Color',
               iconColor: customIconColor,
@@ -341,15 +341,15 @@ void main() {
         ),
       );
 
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
 
-    testWidgets('FutureButton disabled when onTap is null',
+    testWidgets('SFutureButton disabled when onTap is null',
         (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: FutureButton(
+            body: SFutureButton(
               onTap: null,
               label: 'No Action',
             ),
@@ -358,7 +358,7 @@ void main() {
       );
 
       expect(find.text('No Action'), findsOneWidget);
-      expect(find.byType(FutureButton), findsOneWidget);
+      expect(find.byType(SFutureButton), findsOneWidget);
     });
   });
 }

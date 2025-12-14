@@ -23,7 +23,7 @@ part 'rouded_loading_button.dart';
 ///
 /// Example usage:
 /// ```dart
-/// FutureButton(
+/// SFutureButton(
 ///   onTap: () async {
 ///     // Perform validation
 ///     if (someCondition) return null; // Dismiss without success
@@ -39,7 +39,7 @@ part 'rouded_loading_button.dart';
 ///   },
 /// )
 /// ```
-class FutureButton extends StatefulWidget {
+class SFutureButton extends StatefulWidget {
   final Future<bool?> Function()? onTap;
   final ValueChanged<String>? onPostError;
   final VoidCallback? onPostSuccess;
@@ -53,7 +53,7 @@ class FutureButton extends StatefulWidget {
   final void Function(bool)? onFocusChange;
 
   final double? loadingCircleSize;
-  const FutureButton({
+  const SFutureButton({
     super.key,
     this.onTap,
     this.label,
@@ -74,12 +74,12 @@ class FutureButton extends StatefulWidget {
   });
 
   @override
-  State<FutureButton> createState() => _FutureButtonState();
+  State<SFutureButton> createState() => _SFutureButtonState();
 }
 
-class _FutureButtonState extends State<FutureButton> {
+class _SFutureButtonState extends State<SFutureButton> {
   // Individual controllers for each button instance - survives hot reload
-  late final _FutureButtonController _controller = _FutureButtonController();
+  late final _SFutureButtonController _controller = _SFutureButtonController();
 
   // Handle the Future execution as an instance method
   Future<void> _handleTap() async {
@@ -103,7 +103,7 @@ class _FutureButtonState extends State<FutureButton> {
       // Call the post-success callback if provided
       widget.onPostSuccess?.call();
     } catch (error) {
-      //  log("Error in FutureButton: $error");
+      //  log("Error in SFutureButton: $error");
       await _controller.error(
         message: error.toString(),
         then: () => widget.onPostError?.call(error.toString()),
@@ -214,7 +214,7 @@ class _FutureButtonState extends State<FutureButton> {
 
 //************************************ */
 
-class _FutureButtonController {
+class _SFutureButtonController {
   final controller = SRoundedLoadingButtonController()
       .inject<SRoundedLoadingButtonController>(autoDispose: true);
 

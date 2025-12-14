@@ -1,6 +1,6 @@
 ## 1.0.0
 
-* **Initial stable release**: FutureButton widget with full async operation support
+* **Initial stable release**: SFutureButton widget with full async operation support
 * **Automatic state management**: Handles loading, success, error, and reset states
 * **Future return value handling**:
   - Returns `true`: Shows success animation

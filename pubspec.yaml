@@ -1,9 +1,9 @@
-name: future_button
+name: s_future_button
 description: A Flutter package for future_button functionality
-issue_tracker: https://github.com/SoundSliced/future_button/issues
-repository: https://github.com/SoundSliced/future_button
+issue_tracker: https://github.com/SoundSliced/s_future_button/issues
+repository: https://github.com/SoundSliced/s_future_button
 version: 1.0.0
-homepage: https://github.com/SoundSliced/future_button
+homepage: https://github.com/SoundSliced/s_future_button
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

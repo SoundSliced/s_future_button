@@ -1,12 +1,12 @@
-# FutureButton
+# SFutureButton
 
-A powerful Flutter package that provides a customizable `FutureButton` widget for handling asynchronous operations with automatic state management. It elegantly handles loading, success, error, and reset states with smooth animations.
+A powerful Flutter package that provides a customizable `SFutureButton` widget for handling asynchronous operations with automatic state management. It elegantly handles loading, success, error, and reset states with smooth animations.
 
-[![pub package](https://img.shields.io/pub/v/future_button.svg)](https://pub.dev/packages/future_button)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/SoundSliced/future_button/blob/main/LICENSE)
+[![pub package](https://img.shields.io/pub/v/s_future_button.svg)](https://pub.dev/packages/s_future_button)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/[A/s_future_button/blob/main/LICENSE)
 
 ## Demo
-![Demo](https://raw.githubusercontent.com/SoundSliced/future_button/main/example/assets/example.gif)
+![Demo](https://raw.githubusercontent.com/SoundSliced/s_future_button/main/example/assets/example.gif)
 
 
 ## Features
@@ -54,7 +54,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  future_button: ^1.0.0
+  s_future_button: ^1.0.0
 ```
 
 Then run:
@@ -67,15 +67,15 @@ flutter pub get
 ### Import the package
 
 ```dart
-import 'package:future_button/future_button.dart';
+import 'package:s_future_button/s_future_button.dart';
 ```
 
 ### Basic Example
 
-The simplest way to use `FutureButton`:
+The simplest way to use `SFutureButton`:
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     // Perform your async operation here
     final success = await loginUser();
@@ -91,7 +91,7 @@ FutureButton(
 ### Success Operation
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     // Simulate network request
     await Future.delayed(const Duration(seconds: 2));
@@ -108,7 +108,7 @@ FutureButton(
 ### Validation Failure
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     final isValid = validateForm();
     if (!isValid) {
@@ -129,7 +129,7 @@ FutureButton(
 ### Exception Handling
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     try {
       final response = await fetchData();
@@ -148,7 +148,7 @@ FutureButton(
 ### Silent Dismissal
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     // Check if user cancelled the operation
     final shouldProceed = await showDialog(...);
@@ -168,7 +168,7 @@ FutureButton(
 ### Custom Styling
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     await uploadFile();
     return true;
@@ -187,7 +187,7 @@ FutureButton(
 ### Icon Button
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: () async {
     await saveData();
     return true;
@@ -212,7 +212,7 @@ FutureButton(
 ```dart
 final focusNode = FocusNode();
 
-FutureButton(
+SFutureButton(
   onTap: () async {
     await submitForm();
     return true;
@@ -230,7 +230,7 @@ FutureButton(
 ### Advanced Configuration
 
 ```dart
-FutureButton(
+SFutureButton(
   onTap: _performAsyncTask,
   label: 'Advanced',
   
@@ -271,7 +271,7 @@ FutureButton(
 
 ## API Reference
 
-### FutureButton Constructor Parameters
+### SFutureButton Constructor Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -350,7 +350,7 @@ The example demonstrates:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit pull requests or open issues on [GitHub](https://github.com/SoundSliced/future_button).
+Contributions are welcome! Please feel free to submit pull requests or open issues on [GitHub](https://github.com/[A/s_future_button).
 
 ## License
 
@@ -358,7 +358,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For issues, questions, or suggestions, please visit the [issue tracker](https://github.com/SoundSliced/future_button/issues).
+For issues, questions, or suggestions, please visit the [issue tracker](https://github.com/[A/s_future_button/issues).
 
 ---
 

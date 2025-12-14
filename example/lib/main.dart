@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:future_button/future_button.dart';
+import 'package:s_future_button/s_future_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,24 +11,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'FutureButton Example',
+      title: 'SFutureButton Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const FutureButtonExample(),
+      home: const SFutureButtonExample(),
     );
   }
 }
 
-class FutureButtonExample extends StatefulWidget {
-  const FutureButtonExample({super.key});
+class SFutureButtonExample extends StatefulWidget {
+  const SFutureButtonExample({super.key});
 
   @override
-  State<FutureButtonExample> createState() => _FutureButtonExampleState();
+  State<SFutureButtonExample> createState() => _SFutureButtonExampleState();
 }
 
-class _FutureButtonExampleState extends State<FutureButtonExample> {
+class _SFutureButtonExampleState extends State<SFutureButtonExample> {
   String _statusMessage = '';
 
   Future<bool?> _simulateSuccessfulOperation() async {
@@ -55,7 +55,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FutureButton Examples'),
+        title: const Text('SFutureButton Examples'),
         elevation: 0,
       ),
       body: SingleChildScrollView(
@@ -70,7 +70,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Success Operation',
               description: 'Returns true after 2 seconds',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateSuccessfulOperation,
                 label: 'Submit',
                 onPostSuccess: () {
@@ -83,7 +83,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Validation Failure',
               description: 'Returns false to show validation error',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateValidationFailure,
                 label: 'Validate',
                 bgColor: Colors.orange.shade700,
@@ -97,7 +97,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Exception Handling',
               description: 'Throws an exception to show error message',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateException,
                 label: 'Network Request',
                 bgColor: Colors.red.shade700,
@@ -111,7 +111,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Silent Dismissal',
               description: 'Returns null for silent reset',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateSilentDismissal,
                 label: 'Silent',
                 bgColor: Colors.purple.shade700,
@@ -129,7 +129,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Custom Styled Button',
               description: 'Custom dimensions, colors, and border radius',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateSuccessfulOperation,
                 label: 'Custom Style',
                 height: 50,
@@ -148,7 +148,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Icon Button',
               description: 'Button with custom icon instead of text',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateSuccessfulOperation,
                 icon: const Icon(
                   Icons.cloud_upload,
@@ -169,7 +169,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Flat Button (No Elevation)',
               description: 'Button without shadow elevation',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateSuccessfulOperation,
                 label: 'Flat Button',
                 isElevatedButton: false,
@@ -184,7 +184,7 @@ class _FutureButtonExampleState extends State<FutureButtonExample> {
             _buildExampleCard(
               title: 'Disabled Button',
               description: 'Button in disabled state (cannot be tapped)',
-              child: FutureButton(
+              child: SFutureButton(
                 onTap: _simulateSuccessfulOperation,
                 label: 'Disabled',
                 isEnabled: false,

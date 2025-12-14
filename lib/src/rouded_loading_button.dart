@@ -1,4 +1,4 @@
-part of 'future_button.dart';
+part of 's_future_button.dart';
 
 /// States that your button can assume via the controller
 // ignore: public_member_api_docs
