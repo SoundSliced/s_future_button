@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:s_future_button/s_future_button.dart';
 
 void main() {
