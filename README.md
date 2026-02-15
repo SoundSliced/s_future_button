@@ -54,7 +54,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  s_future_button: ^2.0.0
+  s_future_button: ^2.1.0
 ```
 
 Then run:
@@ -291,6 +291,9 @@ SFutureButton(
 | `onPostError` | `ValueChanged<String>?` | `null` | Callback after error with message |
 | `focusNode` | `FocusNode?` | `null` | Custom focus node |
 | `onFocusChange` | `void Function(bool)?` | `null` | Focus change callback |
+| `successDuration` | `Duration?` | `Duration(milliseconds: 1500)` | How long to display success state |
+| `errorDuration` | `Duration?` | `Duration(milliseconds: 1500)` | How long to display error state |
+| `loadingWidget` | `Widget?` | `null` | Custom loading indicator replacement |
 
 ### Return Value Handling
 
