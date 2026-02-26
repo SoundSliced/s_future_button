@@ -54,7 +54,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  s_future_button: ^2.1.0
+  s_future_button: ^3.0.0
 ```
 
 Then run:
